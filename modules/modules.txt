@@ -1,0 +1,52 @@
+MODULES:- Every pyhon file or programme or python file is called MODULE
+
+"""modules refers to a file containing python statements and definations
+and the file refers example.py and here module would be example.
+
+we use modules to breakdown large programmes into small manageable and organised files.
+furthermore, modules provides reusability of code  
+
+We can define our most used functions in a module and import it, 
+instead of copying their definitions into different programs.
+"""
+
+Module consists of:-
+
+1.Excuatable statements 
+2.Global variables
+3.Functions 
+4.Classes
+
+Main module:- if we excute any module,by default it is main module
+
+we can import the properties of one module into another module using import statement
+
+Sub module:- if a module imported another module ,then the imported model is called sub module.
+
+      sample.py                       test.py
+......................          .......................  If we execute test.py then test.py is main module and  
+......................          .......................  sample.py is sub module
+...................... -->import.......................
+......................          .......................
+......................          .......................
+
+
+1) if we execute the main module(sample.py) then all the statements of sample.py will be converted into intermeadite 
+   coad called as a byte code(sample.pyc), this byte code again converted into machine code is executed,once the 
+   execution completed then the byte coad (sample.pyc) will be deleted automatically.
+
+2) if we execute the main module(test.py) then two .pyc files will be generated for the main module and sub module
+   respectively i.e, test.pyc and sample.pyc 
+   if the sub module (sample.pyc) is already avilable it wont be generated again untill or unless if there a change in
+   source coad of sample.py 
+   once the execution completed then the main model.pyc will be deleted automatically where as sub-model remains 
+   permanetly.. (sample.pyc)
+
+3) if we excute Main module(test.py) for the 2nd time then only one .pyc gets generated i.e,main module test.pyc bcz
+   sub module sample.pyc already avilable 
+
+4) before executining the main module (test.py) for the 3rd time, if we modified the sample.py then 2 .pyc files gets
+   created i.e, main module(test.pyc) and the updated module (sample.pyc)
+
+5) if we executeda file then the all the Excuatable statements of the sub module also executed automatically. 
+

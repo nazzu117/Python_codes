@@ -1,0 +1,23 @@
+OBJECT:- The concept allocating memory for non-static variable of the class at the time
+         of the programme is known as a object.
+
+Instance of a class is known as a object
+Syntax of object:
+
+refvariable=classname()    ## object creation statement
+here refvariable stores the adress of the object(in-direct-adress)
+
+Referance Variable :   whenever object is created ,that memory location 
+  address of the object is taken by the python interpreter and creates
+  indirect adress and this in Direct adresses is allocated to a variable called referance variable(e1)
+  ex:- print(e1) -------> print's the adresses i,e. indirect adress
+
+Useing referance variable we do following things:
+
+---> We can put data into object
+---> We can get the data from the object
+---> we can call the methods using object
+---> We can create 'n' of objects for a single class
+---> Two different object same class also dosn't contain same indirect adress
+
+

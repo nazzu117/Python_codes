@@ -1,0 +1,160 @@
+"""
+puTTY:- 
+    puTTY is a free and open-source terminal emulator, serial console and network file transfer application. 
+It supports several network protocols, including SCP, SSH, Telnet, rlogin, and raw socket connection. 
+It can also connect to a serial port.
+
+    Like OpenSSH, PuTTY is a very versatile tool for remote access to another computer. ... 
+The most common purpose for this is to establish a serial connection between computers in lieu of an 
+Ethernet or other network connection.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Q) What is the difference between SSL and SSH?
+
+The key difference between SSH vs SSL is that SSH is used for creating a secure tunnel to another computer from which you can 
+issue commands, transfer data, etc. On the other end, SSL is used for securely transferring data between two parties – it does not 
+let you issue commands as you can with SSH
+
+Q) What does SSH stands for?
+
+  Secure Shell
+SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, particularly system administrators, 
+a secure way to access a computer over an unsecured network.
+
+
+What is the full meaning of SSL?
+
+secure sockets layer
+SSL Stands for secure sockets layer. Protocol for web browsers and servers that allows for the authentication, encryption and 
+decryption of data sent over the Internet.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+---> 1.Install and configure putty 
+---> 2.setup putty with SSL
+---> 3.Upload and download files
+
+ """
+PUTTY COMMANDS:-
+
+Basic SSH (PuTTY) commands help you to navigate and work efficiently with the files in Linux terminal. 
+In this guide, We’d handpicked a list of basic PuTTY commands, their options, and usage.
+
+
+    Commands	                                  It's Uses
+
+Pwd	                  Check the present location. Hit enters on type "pwd" command.[PWD-path to working directory...]
+Is	                  This command used to display all the content in a folder or directory.
+cd	                  It stands for change directory.Type  "cd /location" It helps you to navigate.
+cd .	              Helps you to stay at the same directory.
+cd ..	              Command will shift one directory back.
+cd -	              Commands take you back at the previous location.For example, If you were at "/home" but you moved to "/dir".
+                      Typing "cd-" command will take you back to "/home".
+
+mkdir	              It helps you to make the new directory.
+                      Syntax: mkdir directoryNamecp	The command used to copy a file in Linux.
+                      Syntax: cp filename.extension /dir/filename.extension.
+                      The above command copies the file extension and keeps at the location/dir with the same name file.
+
+cp –r	              Copy all the folder content.
+cp -f	              If a file with the same name happens in the destination, then it will force the copy process by deleting the destination file.
+cp -i	              Display the warning message before proceeding with the copy process.
+cp -u	              If file have different content .It will update the file in the destination folder.
+cp -n	              Will first check whether the file exists. If it happens. It don't overwrite the file again.
+cp -a	              Archive the file.
+mv	                  This command moves the file from one place to another.
+                                (Syntax: mv filename.extension /dir/filename.extension)
+The command	"mv filename.extension /dir/filename1.extension” is used to move and rename a file.
+The command "mv filename/ ."	Used to move file one folder back.
+touch	This command creates a new file with any extension you want like text, HTML, PHP, etc. in your current directory.
+Syntax: touch filename.
+the extension helps to create a file extension without any extension.
+
+
+rm                 	 Remove command will delete a file from a server.
+                     Its Syntax: rm filename.extension.
+"rm * folder name"	 Delete all the files or content in a directory.
+"rmdir"	             Remove the complete directory or folder.
+"rm -r folder name"	 Delete the folder as well as the folders inside it.
+cat	                 To display content of a file on the screen. It also copy standard input to standard output.
+                     Syntax: cat filename.extension.
+                     cat command also allows scrolling if the displayed text doesn't fit the screen completely.
+                     cat command also used to create a new file.
+                     Syntax: cat > filename.extension
+                     It is also used to concatenate two files.
+                     Syntax: catfile1.txtfile2.txt>mergedfile.txt
+                     ">" is the output redirection character
+
+head	             Allow you to read the first ten lines of the content available inside the folder.
+                     Syntax:head filename.extension
+                     You can also update the number of lines you would like to display on the screen.
+                     Syntax: head -n15 /temp/filename
+                     Above Syntax will display the first fifteen lines of the content from the given file.
+
+tail	            Gives the last ten lines of content from the file.
+                    Syntax: tail filename.extension
+                    The tail command can provide multiple file names. It shows the last ten lines from each of the mentioned files.
+                    Syntax: tail /dir/file1 /dir/file2
+                    The tail command allows you to change the number of lines you want to be displayed, other than the default number.
+                    Syntax: tail -n15 /temp/filename
+                    Display the last fifteen lines of content from the given file.
+
+zip	                Compress the file size.
+                    The zip Syntax: zip -r foldername.zip folder name.
+                    Delete the file from the zip archive by the following command
+                    "zip -d filename.zip filename."
+                    The following command can update the specified list of files.
+                    "zip -u filename.zip filename."
+                    To delete the original file after creating its zip archive.
+                    By the following command,
+                    "zip -m filename.zip filename."
+
+unzip	            This command is used to decompress a file.
+                    Syntax: unzip filename.zip
+                    Multiple numbers of data undone by using power.
+                    "unzip file1.zip file2.zip file3.zip".
+                    Syntax: unzip filename.zip -x excludedfile.zip
+                    Syntax: unzip filename.zip -x excludedfile.zip
+
+tar	                to compress and decompress folders, the tar command is used.
+                    The command for compressing"folder".
+                    tar -czvf folder1.tar.gz
+                    The command for decompressing.
+                    tar -xvf folder1.tar.gz
+
+chmod	            It allows you to change permissions of a file or directory. It stands for change mode.
+                    Syntax: chmod 754 filenames.
+                    Permissions can be represented either by numbers from 0 to 7 or with alphanumeric characters.
+                    4 represents reading permission
+                    2 represents writing permission
+                    1 represents executing permission
+                    0 represents no permission
+                    5 is a combination of 4, 0, and 1. It suggests the read, no write, and execute an agreement.
+                    4 are a combination of 4, 0, and 0. It indicates read, no write and no execute permission.
+                    "chmod -r" allows you to change the permission of a folder and all the files inside it.
+
+grep	            This command enables you to search for a particular string inside a file or folder. If it finds the perfect match, it will return the whole line containing the phrase.
+                    Syntax: grep "string" filename	The command "grep -i "string" filename."Allow you to search for a string case-insensitively in the file.
+                    The command "grep -c "string" filename." Allow you to count the number of appearances of a string in the given file.
+                    The command "grep -l "string" *".-> display the filename that contains a particular pattern or string.
+                    The command "grep -n "string" filename".-> display the line number along with the result.
+
+find	            It searches for a file inside a folder.
+                    The Syntax: find. -name filename.extension.
+                    By this Syntax, you can find files by permissions, users, groups, file type, size, etc.
+                    The command "find /directory -name filename.extension"
+                    find a file in some directory.
+                    The power "find. type f -name filename.php".
+                    You can look for any type of data, say a PHP file by using this command.
+
+vi	                It allows you to enter a text editor.
+                    Syntax: vi filename
+                    The Syntax will open the data on the screen, and if the file doesn't exist, it will create a new one with the same name.
+                    The escape key → allows you to cancel any command which has started in the vi editor mode.
+                    To exit the vi editor, type ":q."
+                    If in case you haven't done any changes to the file.
+                    Type ":q!" to exit
+                    If you want to undo the changes in a file.
+
+ 

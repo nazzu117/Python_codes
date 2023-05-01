@@ -1,0 +1,207 @@
+Regular Expressions:- RegEx are used for 
+1) Extracting the reqired data from the given data or string
+2) To perform data validations
+3) To develope the url patterns in web applications
+
+Ex1: 101,Smith,100000
+    Blake,102,454500
+    30000,103,Miller
+    
+    Here i want to extract only name and print them
+    so read each line from a file by using filehandling ,the line divided into multiple words,at 2nd location name 
+    is available,i can't apply "split(",") based comma bcz in secound line name is at 1st position in secound line
+    name is at 1st position and in that 3rd line name is at 3rd position so for this we go for RegEx... 
+Ex2: 
+    Whenever we give request to web app it searches for Url patterns,
+    if 1000 webpages ----->1000 url required ,so it takes lotof time for searching SO we use RegEx
+    for 1000 webpages----->only 100 urls required
+    for 100 webpages ----->only one url enough 
+""" SO USEING RegEx IT TAKES LESS TIME """
+
+
+In RegEx we use some special charectors to define the patterns 
+after degfining the patterns,we can extract that pattern matching data from the given data ,by using
+pre-defined function of RE module....@@@@@@@@
+
+----> re is the inbult module in python we have to import re
+@@@ the following are the some special characters that used to define the patterns
+
+1)  * :- It matches with zero or more occurances of proceding character
+
+Ex: a*b
+          Here the preceding character is b the above re matches with following example's
+     ac
+     abc
+     abbc
+     abbbc
+     abbbbc
+     abbbd----->Invalid
+     cbbba----->Invalid
+     
+2) + :- It matches with one or more occurances preceding characters
+        Here preceding character is b the above re matches with the following
+Ex: ab+c
+    abc
+    abbc
+    abbbc
+    abbbbc
+    abbbbbc
+    ac----->Invalid
+
+3) ? :-It matches with zero or one occurances preceding characters
+        Here preceding character is b the above re matches with the following
+Ex1:ab?c
+    ac
+    abc
+    abbc---->Invalid
+Ex2:
+    pea?rl
+    perl
+    pearl
+    peaarl---->Invalid
+Ex3:
+   colou?r
+   color
+   colour
+   colouur----->Invalid
+
+4) . :- It matches with any single character
+Ex: a.c
+    agc
+    a5c
+    a@c
+    a c
+    c!c
+    adc
+    adec--->Invalid
+    a@3c--->Invalid
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+Examples:-
+1.--------> a* ----> various atring are used { ,a,aa,aaa,aaaa,aaaa,aaaaa,aaaaaa,....}
+2.--------> a+ ---->{a,aa,aaa,aaaa,aaaaa}
+3.--------> ba?d ---> {bd,bad}
+            ra?m --->{rm,ram}
+4.--------> b.d {bad,bed,b@d,b d,b_d,b-d,b+d,b*d,bus,box,b^d}
+5.--------> b.*d --->{bad,bed,bid,b-d,bread,bold,bowled,bird,bread,brand.......}
+6.--------> a.* ---->{a,ant,and,atm,all,animal,air,arum,azeez......}\
+--------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+5) []:- It matches with any single character in the given list
+Ex1:  b[aeiou8]d
+     All these characters(a,e,i,o,u) can br present b/w b and d such as 
+     Here the length should be 3 only
+    bad
+    bed
+    bid
+    bod
+    bud
+    b8d
+    b7d----->Invalid
+    bpd----->Invalid
+Ex2:
+    b[aeiou8]*d
+    baaad
+    baeid
+    beeaaaad
+    bbaeid---->Invalid
+---------------------------------------------------------------------------------------------------------------------------
+6) [^]:- It matches with any single character other than in the given list
+Ex: b[^aeiou]d
+    other than these characters (a,e,i,o,u)any character can be
+    b/w b and d such as 
+    b8d
+    bpd
+    bad----->Invalid
+    bed----->Invalid
+    bid----->Invalid
+    bod----->Invalid
+    bud----->Invalid
+-----------------------------------------------------------------------------------------------------------------------
+7) [-]:-matches with any single character in the given range
+Ex1:- x[a-e]y The ra is from to e ie., matches with following
+    xay
+    xby
+    xcy
+    xdy
+    xey
+    xfy------>Invalid
+    xpy------>Invalid
+Ex2:-
+    [0-9]---->Any single digit
+    [a-z]---->Any one lowercase alphabit
+    [A-Z]---->Any one uppercase alphabit
+    [a-zA-Z]--->Any one alphabit
+    [a-zA-Z0-9_]Anyone alphanumeric underscore(_) also allowed
+    [^a-z]----->Any non uppercase alphabit 
+    [^A-Z]----->Any one non lowercase alphabit
+    [^0-9]----->Any single non digit 
+    [^a-zA-Z0-9]---->Any one non alphanumeric("Special symbuls)
+
+------------------------------------------------------------------------------------------------------------------------
+8)(|):- Matches withany one string in the list.
+Ex:- (java|c|python)
+--------------------------------------------------------------------------------------------------------------------
+9) {m}:- Matches with extract occurances of preceding character
+Ex- ab{3}c   Matches with exact 3 occurances of b8d
+    abbbc
+    abbbbc----->Invalid
+    abbc------->Invalid
+-------------------------------------------------------------------------------------------------------------------
+10) ^ :- xoR --->Start of the line
+Ex:-  ^perl
+      ^[abc]
+      ^[^abc]
+------------------------------------------------------------------------------------------------------------------
+11) $: End of the line
+Ex:-  perl$
+      [0-9]$
+12) \d or [0-9]:-Any single digit
+Ex:-
+    Represinting 4 digit number
+    [0-9][0-9][0-9][0-9]
+         (OR)
+    [0-9]{4}---> Means the preceding character[0-9] accures 4 times
+         (OR)
+    \d\d\d\d
+         (OR)
+    \d{4} Means the preceding character accures 4 times  
+------------------------------------------------------------------------------------------------------------------
+13) /D or [^0-9] :- Any single non digit
+
+14) /w or [a-zA-Z0-9]:- Any  alphanumeric
+
+15) /W or [^a-zA-Z0-9]:- Any non alphanumeric or special character
+
+16) /s :- ' ','\t','\n' :- i.e, space,tabspace and newline
+-------------------------------------------------------------------------------------------------------------------
+Examples:-
+
+===> "JAN 15,MAR 05,APRIL 16,17 APRIL"
+     Here JAN,MAR,APRIL all are non numeric("Strings")
+     15,05,16,17 all are numeric Means -->[0-9]{2} OR \d {2}
+     Before numeric there is----> space ' '
+     so [a-zA-Z]* ---> Means 0 or more accurences but i don't want 0 accurence 
+     so Finally
+     [a-zA-Z]+ ' ' [0-9][0-9]
+     Ex JAN     space numeric
+re is the predefined module,which has functions and methods for regular Expressions
+ 
+
+
+==========================================================================================================
+==========================================================================================================
+
+A set is a set of characters inside a pair of square brackets [] with a special meaning:
+
+Set	Description	Try it
+[arn]------>	Returns a match where one of the specified characters (a, r, or n) are present	
+[a-n]------>	Returns a match for any lower case character, alphabetically between a and n	
+[^arn]----->	Returns a match for any character EXCEPT a, r, and n	
+[0123]----->	Returns a match where any of the specified digits (0, 1, 2, or 3) are present	
+[0-9]------>	Returns a match for any digit between 0 and 9	
+[0-5][0-9]-->	Returns a match for any two-digit numbers from 00 and 59	
+[a-zA-Z]---->	Returns a match for any character alphabetically between a and z, lower case OR upper case
+
+[+]	In sets, +, *, ., |, (), $,{} has no special meaning, so [+] means: return a match for any + character 
+in the string

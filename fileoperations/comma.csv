@@ -1,0 +1,9 @@
+emp_id,emp_name,emp_city,emp_salary
+101,Ramesh,Hyderabad,98000
+212,Nazeer,Hyderabad,65000
+311,RamaDevi,Hyderabad,50000
+444,Bindhuja,Banglore,99999
+656,ranika,Mumbai,65000
+std_name,std_id,std_phnum
+Ramesh,1011,7799886655
+Suresh,1001,7764646445

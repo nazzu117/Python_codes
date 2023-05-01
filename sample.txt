@@ -1,0 +1,3 @@
+1.What if i What to access global variable inside function even when local variable avilable with the same name.
+2. Can breaf me what is recursion and difference with normal function.
+3.can u breaf difference between local and non static variables in class 

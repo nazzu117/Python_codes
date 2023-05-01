@@ -1,0 +1,62 @@
+Diff b/W List,Tuple,Set,Dictionary,.,.,.,.,.,.,
+
+#    List                  Tuple                set                  Dictionary
+1. represented as []  1.represented as () 1.represented as {}   1.represented as {(k:v)}
+
+
+2. mutable object     2.Immutabe object   2.Mutable object      2.mutable object
+
+
+3. elements can be    3.elements can be   3.elements should     3.elements can be 
+   mutable/immutable    mutable/immutable   be immutable          mutable/immuable
+
+   
+4.duplicates allowed  4.duplicates allowed 4.not allowed        4.duplicate keys are
+                                                                  not allowed,values are
+                                                                  allowed.
+5.Insertion order     5.Insertion order is 5.not preserved      5.not preserved
+   is preserved         preserved
+   
+6.Indexing/slicing is   Supported            not supported        not supported
+  supported
+  
+7.created using list()6.created using      6.using set()        6.created using dict() 
+                         tuple()
+
+
+8.List is mutable i.e we can make any changes in list.	
+Tuple  is immutable i.e we can not make any changes in tuple	
+Set is mutable i.e we can make any changes in set. But elements are not duplicated.	
+Dictionary is mutable. But Keys are not duplicated.
+======================================================================================================================
+======================================================================================================================
+Tuples uses:-
+
+To represent a single set of data.
+To provide easy access to, and manipulation of, a data set.
+To return multiple values from a method without using out parameters (in C#) or ByRef parameters (in Visual Basic).
+To pass multiple values to a method through a single parameter.
+
+Dictionary uses:-
+
+A Dictionary (or "dict") is a way to store data just like a list, but instead of using only numbers to get the data, you can use almost anything.
+in order to store unordered key-value-pairs.
+
+list uses:-
+
+It is used to store multiple kind of data types and perform numerous action over these data.
+To provide easy access to, and manipulation of, a data set.
+
+When to use a dictionary:
+– When you need a logical association between a key:value pair.
+– When you need fast lookup for your data, based on a custom key.
+– When your data is being constantly modified. Remember, dictionaries are mutable.
+
+When to use the other types:
+– Use lists if you have a collection of data that does not need random access. Try to choose lists when you need a simple, iterable collection that is modified frequently.
+– Use a set if you need uniqueness for the elements.
+– Use tuples when your data cannot change.
+
+Many times, a tuple is used in combination with a dictionary, for example, a tuple might represent a key, because it’s immutable.
+==================================================================================================================================
+==================================================================================================================================

@@ -1,0 +1,69 @@
+databases:-
+  A database is a organised collection of data ,generally stored and accessed electronacilly from a Computer
+  ## OR ##
+   A database is a collection of information that is organized, so that 
+   it can be easily accessed, managed and updated. Computer databases typically 
+   contain aggregations of data records or files, containing information about 
+   sales transactions or interactions with specific customers.
+
+there are 2 types of databases are there
+
+1.sequence databases ---> The data will be stored in a structured formate[eg:-mysql,oracle,sqllite,postgreessql,etc]
+2.non sequence databases---> data not stored in a structured format[eg:-mongo,...]
+
+The following are the various step involoved in database--->mysql we are using
+
+i)install the xampp app and run start apache and mysql -- check and add path in envernoment variable
+ii)then open command promt type ---> mysql -u root -p  then press Enter
+iii)it will ask for password ,so we dont have password so enter then itll shows mysql installed
+
+#1 LISTING THE DATABASES USE- i) show databases;
+the following table shows the list of DB avilable 
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+
+#2 CREATEING DB:- create database databasename;
+  i have created a sample database as pyhon_practice--then you can check it by use show databases
+
+#3 then connecting to database-- use databasename;
+
+#4 creating a table
+create table table_name(column1 datatype(length)),(column2 datatype(length)),...........
+after creation of table --- show tables;    -->it will display the table table_name
+
+#5 description of table--> desc table_name; ---> that will display the table 
+
+#6 insert the data into the table
+insert into table_name values(column1-value,column2-value,column3-value..)
+
+#7 after insertion of data retrive the data from table by
+ select * from table_name;
+ select emp_id from empdetails   selected details will display
+ select emp_id,emp_name from empdetails  : it gives multiple details
+
+#8 updating the data in table
+ update table_name set columnname=valuetoset where column=valuetofind:
+ update empdetails set emp_number=7036260029 where emp_id=101;
+ update empdetails set emp_number=7036260029,emp_name='samaram' where emp_id=101;  [To update multiple alues]
+
+#9 deleting the data
+delete from table_name where condition;
+delete from empdetails where emp_id=129;
+delete data from the table--->truncate table_name;           #data will deleting not table ,table_name will present
+delete total table by---> drop table table_name;
+delete total database---> drop database databasename;
+
+
+===>> CRUD--> Create,Retrive,Update,Delete
+
+
+

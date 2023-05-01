@@ -1,0 +1,77 @@
+Version Controll: VC is the management of changing changes to documents,computer programmes,large websites
+                  and other collection of information these changes are usually termed as "version controll
+
+
+# Git --- Code Version Controller...
+
+1) Login
+2) forgotpassword
+3) change_details
+4) creations
+
+
+# git should be installed in the system....
+# github or gitlab or bitbucket.. acoutn should be created...
+
+# Folders will be called as repositories ...
+    #1) Local Repository -- Folder in the local system
+    #2) Server or Remote Repository -- Folder on the github account..
+
+# 2 types of git accounts.. 
+    1) Free -- personal account
+    2) Paid --- Official Accoutn..
+
+# Step for Git First Push..
+
+1) initialisation of git into the folder...
+    git init -- will initialise the git inside that particular folder..
+
+2) Status of the local Repository
+    git status -- will return the status of local Repository...
+
+3) adding the chnaged or created new file into the local Repository..
+    git add filname --> for adding particular file in the local Repository..
+    git add .  --> for adding all the new file or chnaged into the local Repository
+
+4) Commiting the chnages ...
+    git commit -m "First Time Pushing.."
+
+5) Adding the git hub credetials to the local Repository..
+    # global adding
+        git config --global user.name "your github username"
+        git config --global user.email "your github email id"
+    # particular repositories Adding
+        git config user.name "your github username"
+        git config user.email "your github email id"
+
+6) Adding the remote reposiroty with local Repository
+
+    # git remote add origin githublink of remote Repository
+    # git remote add origin https://github.com/sanjureddy5563/Python_10am_weekend.git
+
+7) Pushed the chnaged to the remote Repository...
+
+    # git push origin branchname
+    # git push -u origin master
+
+8) Get the updated code from remote Repository..
+
+    # git pull origin branchname
+    # git pull origin master
+
+9) Get the change you made in the local Repository with previous push..
+
+    # git diff filename  -- for knowing the chnages you made in single file..
+    # git diff  -- for knowing the chnages you made in all the file..
+
+10) remving the chnages you made    
+
+    # git checkout . --- will remove all the chnages you made in all the file with previous push..
+    # git checkout filename - will all the chnages you made in that particular specific file with previous push..
+
+
+11) Getting the project code for the firt time-- cloning..
+
+    # git clone githublink.
+git_intro.txt
+Displaying git_intro.txt.

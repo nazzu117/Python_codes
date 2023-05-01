@@ -1,0 +1,336 @@
+OOP's :- object oriented programme
+
+1.Encapsulation 
+2.Abstraction
+3.Inheretance
+4.polymerphism
+
+The above oop princples provides
+i.Security
+ii.Flexibility And
+iii.Reusabolity 
+
+In JAVA progimming the developer's forced to write programmes using oops princples only,
+they cannot develope application with opps in JAVA
+
+But, in python we can write programmes using
+1.Procedural-orianted progimming
+2.Object oriented programe
+
+""" The focus of procedural programming is to break down a programming task into a collection of variables,
+data structures, and subroutines, whereas in object-oriented programming it is to break down a programming 
+task into objects that expose behavior (methods) and data (members or attributes) using interfaces.   """
+
+Encapsulation:-- Combining data and Methods
+
+Q) Why we need to combine data and Methods...?
+
+Every application got data and operations
+data reprasented using variables
+operations using functions and Methods
+
+// customer---> data //  All are global variables
+c_name="Miller"
+ac_no=123456789
+address="Ameeerpet"
+balance=500000
+
+// customer operations (functions)
+def deposite(damt):
+    pass
+def withdrawl(wamt):
+    pass
+def transfer(daccno,tamt):
+    pass
+
+NOTE:- damt,wamt,daccno,tamt are the local variables to reprasent the functions.
+c_name ,ac_no,address,balance are the global variables which can accessed by all functions
+
+damt is a local variable of deposite so only deposite can access damt but not by other functions
+so local variables can accessed by specific only particular functions
+
+// emp data //
+emp_name="David"
+e_id=1001
+e_sal=123456
+e_lotin="Hyd"
+
+def tax():
+   pass
+def hra():
+   pass
+def pf():
+   pass
+
+In the above example, all the global variables of customer 
+and emp can be accessed by all the function of customer and emp
+
+Actually customer data only access by customer functions only and 
+emp data should accessed by emp functions ony but here customer data accessed by emp functions
+and similerly emp data is accing customer and emp both functions i.e, here there is Security
+
+so we need to make customer data avilable for only customer function and emp data to emp function
+
+so we make customer data and customer functions as one group called customer class
+    we group emp data and emp function as one group called emp class
+    only emp functions accessed emp data.
+
+Encapsulation:- The process of grouping/binding related data(variables) along with 
+Methods(functionalites) is called Encapsulation
+"" Encapsulation is implemented by Class ""
+
+Class:-- A class is structure which groups/binds related data along with it's Methods
+
+A class is a collection of variables and Methods.
+Data is reprasented using variables and operations are reprasented using Methods
+
+In class we have two types of variables,
+1.Static variables
+2.Non-Static variables
+
+syntax of class:
+     class classname:
+     """ doc string """    ----->  says about the functionalites of a class [optional]
+     ------------------
+     ------------------     ----> data(variables) + Methods
+     ------------------
+     ------------------
+
+NOTE:- All the statements should follow the indentation inside class
+
+1) A class consists of following :
+     i.Doc string  [optional]
+     ii.variables
+         a.Static variables
+         b.Non-Static variables.
+     iii.Methods
+
+customer_name -------------
+customer_address           =
+account_no                  =
+ac_balance                   --------> customer group,
+deposite()                  =          consists of data(variables) such as,name,ac.no,...  And
+transfer()                 =           Methods such as deposite(),transfer(),withdrawl().
+withdrawl() ---------------
+
+
+emp name--------------
+emp id                =
+designation            =
+TA()                    -------------> employee group
+DA()                   =
+HRA()---------------- =
+
+In the above example we have 2 groups
+customer group and employee group, we can reprasented by 2 class
+
+Class customer:
+  ...............
+  ...............    -----> consists of customer variables and customer Methods
+  ...............
+
+class employee:
+  ...............
+  ...............    ------> consists of emp variables and emp Methods
+  ...............
+
+in customer class customer variables are accessed by customer Methods
+similerly employee class  variables are accessed by employee Methods only
+
+OBJECT:- object is a instance of a class 
+         A class is collection of similer object
+         we can create n no of objects for a class
+         each object has it's own copy of variables and Methods
+
+
+EX:-
+
+class emp:
+    eid=input("enter emp id:")
+    emp_name=input("enter the emp name:")
+    emp_salary=input("enter the emp dsalary:")
+    emp_desgn=input("enter designation of employee:")
+    def tax():
+      pass
+    def hra():
+      pass
+
+object---->e1
+object---->e2
+
+"" With in the class we can represeted data using ""
+
+1.Static variables/Class variables
+2.Non Static variables/instance variables
+
+Static variables: The variables which are defined in side the class and defined outside of all the 
+                  Methods of class are called static variables.
+EX:-
+class Employee:
+     eid=int(input("Enter Employee Id:"))
+     ename=input("Enter Employee name:")
+     esal=int(input("Enter Employee salary:"))          =============> Static and Non static
+     edesgn=input("Enter Employee name:")
+     company=input("Enter Employee company name:")
+     def emp_name():
+     -------------
+     -------------
+     -------------             ==============> Methods
+     def emp_salary():
+     -------------
+     -------------
+     -------------
+e1=emp_name()
+e2=emp_salary()
+
+
+Ex:-  class sample:
+        x=10        ---> static variable
+        def m1():
+          print(sample.x)
+
+-------------------------------------------------------------------------------------------------------------
+Properties of Static variables:-
+
+1. The data which is common for all objects then it is recommend to reprasented by static variable
+   Ex:- Bank name=SBI
+        Withdrew limit=25000
+    The data which is changing from one object to another object then use non static variable
+    ex;- eid,ename,esalary,edesign
+
+2.For static variable only once memory is allocated,as it is instalize only once.
+
+3.A ststic variable can be accessed all the methods of that class and by other classes.
+
+4.A static variable always be accessed by using classname i.e, from within the class or from outside of class
+
+Ex:=
+
+class sample:
+      x=20     # Static variable
+      y=20     # Static variable
+      def display(self):
+          print(sample.x)    ## Accesing ststic variable using class name 
+          print(sample.y)
+      def show(self):        ## Here all the methods can be accessed by sv
+          print(sample.x)
+          print(sample.y)
+## End of the class
+print(sample.x)
+print(sample.y)      ## Accesing sv from outside the class using class name
+
+Difference between class and method
+---> function always defined outside class
+---> method always inside class
+---> a method is called always by a object             --->ex: s1.display()
+---> a function is called normally without any object  --->ex: display()
+---> a method shouls have self as perameter
+
+----------------------------------------------------------------------------------------------------------------
+
+   Static variables                                      Non static variables
+i) if object to object if data is common got      i) if object to object data is changing then go for
+   for static variable                               non static variable
+   ex: company="TCS"                                 ex: empname=input("Enter the name:")
+
+ii) only once memory is allocated                 ii) here multiple times memory is allocated
+    i.e, only once they are instalized                i.e, multiple times the are instalized
+
+iii) Always definds outside of method             iii) Always definds within the method
+
+iv)  A static variable no way related to          iv) Every object will have it's own copy of NSVs and without 
+    object. The same sv value will be               object nsv cannot be created or instalize
+    countinued irrespective of object
+
+
+class sample:
+     """ Samle Class """
+     x=20                       ## Static variables
+     y=40
+     def display(self):       ## A method shouls self have perameter
+                              ## which ever object calls this function then the object adress stored by self
+        print("x=",sample.x)
+        print("y=",sample.y)
+     def show():              ## all methods can accessed by static variable
+        print("x=",sample.x) 
+        print("y=",sample.y)
+## End of the class
+## To access the class members create a object ie, syntax as follows
+## objectname=classname()
+s1=sample()                ## this is the object creation statement here internally a object gets created  and it's
+                           ## adress stored in variable called as a referance variable (s1)
+## A method is always calling using object
+s1.display()
+s1.should()
+## Accessing static variable from outside the class using classname
+print(sample.x)
+print(sample.y)
+
+Non Static Variables: The variables which are declared by using name self are called as NSV or instance variable
+
+EX:- self.x=10
+     self.y=20
+
+Non static variables always defined within the methods.
+
+Properties of non static variables:-
+
+1.If data is changing from one object to another object then we go for non static variable
+  EX- ename,eid,esalary,designation.....
+
+2.For all the non static variable of a class memory will allocated multiple times,whenever we create a object
+ 
+   --->for static variable, memory will allocated once but,
+   --->for non-static variable memory will allocated n no of times,depending on no of object
+
+3.object is used to allocate memory for non-static variable,
+  e1=emp()    ## object creation
+  e1.ename="Miller" ,e1 is the object which is allocating memory to NSV (ename)
+
+  whenever object is created ,that memory location 
+  address of the object is taken by the python interpreter and creates
+  indirect adress and this in Direct adresses is allocated to a variable called referance variable(e1)
+  ex:- print(e1) -------> print's the adresses i,e. indirect adress
+
+4.with respect to every object creation ,saperate copy of memory is allocated to NSV of class
+  ex:- emp e1 will have his own data and methods 
+       emp e2 will have his own data and methods
+
+5.Non static variable of a class can be accessed by all the method of the same class by using self
+
+6. NSV of one class can be accessed from outside of that class by using referance variable and within the class
+   by using self.
+
+
+#static variables related to class
+#non-static variable related to object
+#NSV can be accesed within the class using self.
+#NSV can be accessed from outside the class using object/ref.variable
+
+#SV can be accesed inside/outside the class using classname
+'''
+1.How to define NSV----->within the class within the method------>self
+2.How to access NSV within the class------>self
+3.How to access NSV from outside the class------>refvariable.nsv
+4.who initializes the NSV----------------------->object
+5.if there are 2 objects
+  how many times memory allocated to NSV-------->2times
+6.does every object has its own NSV's ---------->yes
+
+Q)why NSV should be defined within the method?
+Q)what happens if we define NSV outside the method?
+
+Q)how NSV's and objects are related?
+
+Ans: object address------>passed to self of a method---->using that self only NSVs are created and initialized
+     If NSV defined outside the method, the non-static variable cannot get the address of the object--
+      -> and NSV cannot be created
+'''
+
+
+
+
+
+
+
+

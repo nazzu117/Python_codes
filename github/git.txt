@@ -11,7 +11,7 @@ Version Controll: VC is the management of changing changes to documents,computer
 
 
 # git should be installed in the system....
-# github or gitlab or bitbucket.. acoutn should be created...
+# github or gitlab or bitbucket.. accoutnt should be created...
 
 # Folders will be called as repositories ...
     #1) Local Repository -- Folder in the local system
@@ -39,7 +39,9 @@ Version Controll: VC is the management of changing changes to documents,computer
 5) Adding the git hub credetials to the local Repository..
     # global adding
         git config --global user.name "your github username"
+        git config --global user.name "nazzu117"
         git config --global user.email "your github email id"
+        git config --global user.email "pnazeer1@gmail.com
     # particular repositories Adding
         git config user.name "your github username"
         git config user.email "your github email id"
